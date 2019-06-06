@@ -1,0 +1,109 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://MainScene.gd" type="Script" id=1]
+[ext_resource path="res://Rooms/MedBay/MedBay.png" type="Texture" id=2]
+[ext_resource path="res://CryoBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Props/Machine 3.png" type="Texture" id=4]
+[ext_resource path="res://Props/Machine 2.png" type="Texture" id=5]
+[ext_resource path="res://Props/CryoBox/Ladder .png" type="Texture" id=6]
+[ext_resource path="res://Rooms/Engines/EngineRoom.png" type="Texture" id=7]
+[ext_resource path="res://Rooms/LifeSupport/LifeSupport.png" type="Texture" id=8]
+[ext_resource path="res://Rooms/LifeSupport/Moxie.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Rooms/Controls/Controls.png" type="Texture" id=10]
+[ext_resource path="res://Rooms/Controls/Computer station 2.png" type="Texture" id=11]
+[ext_resource path="res://Props/NavigationComputer/NavigationComputer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://UI/Control.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Props/Stairs.png" type="Texture" id=14]
+[ext_resource path="res://background.png" type="Texture" id=15]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Grid" type="GridContainer" parent="."]
+margin_right = 600.0
+margin_bottom = 300.0
+
+[node name="MedBay" type="Sprite" parent="Grid"]
+position = Vector2( 450, 225 )
+texture = ExtResource( 2 )
+
+[node name="CryoBox" parent="Grid/MedBay" instance=ExtResource( 3 )]
+margin_left = -290.0
+margin_top = -130.0
+margin_right = -290.0
+margin_bottom = -130.0
+
+[node name="CryoBox2" parent="Grid/MedBay" instance=ExtResource( 3 )]
+margin_left = -229.0
+margin_top = -130.0
+margin_right = -165.0
+margin_bottom = -2.59
+
+[node name="Props" type="Node" parent="Grid/MedBay"]
+editor/display_folded = true
+
+[node name="Machine 3" type="Sprite" parent="Grid/MedBay/Props"]
+position = Vector2( 555, 200 )
+z_index = 1
+texture = ExtResource( 4 )
+
+[node name="Machine 2" type="Sprite" parent="Grid/MedBay/Props"]
+position = Vector2( 550, 235 )
+texture = ExtResource( 5 )
+
+[node name="Ladder " type="Sprite" parent="Grid/MedBay/Props"]
+position = Vector2( 450, 194 )
+z_index = 2
+texture = ExtResource( 6 )
+
+[node name="EngineRoom" type="Sprite" parent="Grid"]
+position = Vector2( 150, 75 )
+texture = ExtResource( 7 )
+
+[node name="LifeSupport" type="Sprite" parent="Grid"]
+position = Vector2( 150, 225 )
+texture = ExtResource( 8 )
+
+[node name="Moxie" parent="Grid/LifeSupport" instance=ExtResource( 9 )]
+margin_left = -275.0
+margin_top = -130.0
+margin_right = -211.0
+margin_bottom = -2.59
+
+[node name="Controls" type="Sprite" parent="Grid"]
+position = Vector2( 450, 75 )
+texture = ExtResource( 10 )
+
+[node name="Computer station 2" type="Sprite" parent="Grid/Controls"]
+visible = false
+position = Vector2( 85, 35 )
+z_index = 3
+texture = ExtResource( 11 )
+
+[node name="Props" type="Node" parent="Grid/Controls"]
+
+[node name="NavigationComputer" parent="Grid/Controls" instance=ExtResource( 12 )]
+margin_left = -65.0
+margin_top = -54.0
+margin_right = -65.0
+margin_bottom = -54.0
+rect_pivot_offset = Vector2( 0, 0 )
+
+[node name="O2Bar" parent="." instance=ExtResource( 13 )]
+anchor_top = 1.0
+anchor_right = 0.0
+margin_left = 5.0
+margin_top = 280.0
+margin_right = 5.0
+margin_bottom = 280.0
+
+[node name="Stairs" type="Sprite" parent="."]
+position = Vector2( 675.363, 238.566 )
+rotation = 3.14159
+texture = ExtResource( 14 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 1180, 165 )
+z_index = -10
+texture = ExtResource( 15 )
+

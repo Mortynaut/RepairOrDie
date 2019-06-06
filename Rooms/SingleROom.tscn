@@ -1,0 +1,54 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 300.0
+margin_bottom = 150.0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+margin_left = 51.0
+margin_top = 53.0
+margin_right = 248.0
+margin_bottom = 97.0
+columns = 3
+
+[node name="Button1" type="Button" parent="CenterContainer/GridContainer"]
+margin_right = 63.0
+margin_bottom = 20.0
+text = "Button1"
+
+[node name="Button2" type="Button" parent="CenterContainer/GridContainer"]
+margin_left = 67.0
+margin_right = 130.0
+margin_bottom = 20.0
+text = "Button2"
+
+[node name="Button3" type="Button" parent="CenterContainer/GridContainer"]
+margin_left = 134.0
+margin_right = 197.0
+margin_bottom = 20.0
+text = "Button3"
+
+[node name="Button4" type="Button" parent="CenterContainer/GridContainer"]
+margin_top = 24.0
+margin_right = 63.0
+margin_bottom = 44.0
+text = "Button4"
+
+[node name="Button5" type="Button" parent="CenterContainer/GridContainer"]
+margin_left = 67.0
+margin_top = 24.0
+margin_right = 130.0
+margin_bottom = 44.0
+text = "Button5"
+
+[node name="Button6" type="Button" parent="CenterContainer/GridContainer"]
+margin_left = 134.0
+margin_top = 24.0
+margin_right = 197.0
+margin_bottom = 44.0
+text = "Button6"
+

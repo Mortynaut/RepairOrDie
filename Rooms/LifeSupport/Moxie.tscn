@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Rooms/LifeSupport/Moxie.gd" type="Script" id=2]
+[ext_resource path="res://Rooms/LifeSupport/Machine 1.png" type="Texture" id=3]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Moxie" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -298.905
+margin_top = -146.745
+margin_right = -234.905
+margin_bottom = -19.335
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="CryoBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 61.0
+margin_bottom = 126.0
+
+[node name="Sprite" type="TextureRect" parent="CryoBoxContainer"]
+margin_right = 44.0
+margin_bottom = 126.0
+texture = ExtResource( 3 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CryoBoxContainer"]
+margin_left = 48.0
+margin_right = 120.0
+margin_bottom = 126.0
+
+[node name="MakeO2Button" type="Button" parent="CryoBoxContainer/CenterContainer"]
+margin_top = 52.0
+margin_right = 72.0
+margin_bottom = 74.0
+theme = SubResource( 1 )
+text = "Make O2"
+
+[connection signal="pressed" from="CryoBoxContainer/CenterContainer/MakeO2Button" to="." method="_on_MakeO2Button_pressed"]
